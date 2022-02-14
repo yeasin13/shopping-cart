@@ -2,31 +2,33 @@
         const productInput = document.getElementById(product + '-number');
         let productNumber = productInput.value;
         
-        if(isIncreasing){
-            productNumber= parseInt(productNumber) + 1;
+        if(isIncreasing == true){
+            productNumber = parseInt(productNumber) + 1;
         }
         else if(productNumber > 0){
-            productNumber= parseInt(productNumber) - 1;
+            productNumber = parseInt(productNumber) - 1;
         }
         productInput.value = productNumber;
         //update  total
        const productTotal =  document.getElementById(product + '-total');
        productTotal.innerText = productNumber * price;
-    }
+    
         //calculate total
         calculateTotal();
-
+    }
     function getInputValue(product){
-        const productInput =  document.getElementById(product + '-number');
+        const productInput = document.getElementById(product + '-number');
         const productNumber = parseInt(productInput.value);
         return productNumber;
     }
     function calculateTotal(){
-    
-      const phoneTotal = getInputValue('phone') * 1219;
-      const caseTotal = getInputValue('case') * 59;
-      const subTotal = phoneTotal + caseTotal;
-      console.log(subTotal);
+        
+        const phoneTotal = getInputValue('phone') * 1219;
+        const caseTotal = getInputValue('case') * 59;
+        const subTotal = phoneTotal + caseTotal;
+        console.log(subTotal);
+
+      
       // update on the html
       document.getElementById('sub-total').innerText = subTotal;
       
